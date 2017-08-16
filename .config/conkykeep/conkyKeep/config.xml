@@ -1,0 +1,26 @@
+<!-- Use this file to configure your Google-Login-Information and the Conky styling -->
+<configuration>
+	<login>
+		<!-- use your Google username or mail-address -->
+		<username>your g-mail</username>
+		<password>your password</password>
+	</login>
+    <!-- Filter which notes should be shown -->
+	<filter>
+        <!--
+        Examples:
+         
+        <removeall>no</removeall> 
+        Yes: Dont show any notes by default, filter by <allow*> tags
+        No (Default): Show all notes by default, filter by <remove*> tags 
+
+		<removeid>14dc8e4cc1c.931b151e195ac3f6</removeid>
+		<removetitle>Passwords</removetitle>
+        
+        <allowid>14dc8e4cc1c.931b151e195ac3f6</allowid>
+		<allowtitle>Not Passwords</allowtitle>
+		 -->
+        <removeall>no</removeall> 
+        <removetitle>Passwords</removetitle>
+	</filter>
+</configuration>

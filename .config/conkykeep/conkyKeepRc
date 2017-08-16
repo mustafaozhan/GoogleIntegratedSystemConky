@@ -1,0 +1,42 @@
+# Set own_window_type to normal if you don't want ConkyPress on all desktops
+# Also set own_window_type to normal if you use Xfce
+update_interval 1500.0
+total_run_times 0
+#minimum_size 330 1080
+alignment tr
+gap_x 0
+gap_y 608
+background yes
+
+
+own_window yes
+own_window_class Conky
+own_window_type override 
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager  
+own_window_transparent yes
+
+
+#own_window_argb_visual yes # fixes the background for slim users
+#own_window_argb_value 255 #130 # adjust the transparancy of BG-Color
+
+use_xft yes
+xftfont monofur dreams:size=8
+xftalpha 0.8
+out_to_console no
+out_to_stderr no
+override_utf8_locale yes
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 0
+default_color white
+no_buffers yes
+uppercase no
+use_spacer left
+# important, standard size for var buffer is 128bit
+imlib_cache_size 0
+text_buffer_size 6000
+
+TEXT
+${execp python3 -m conkyKeep }

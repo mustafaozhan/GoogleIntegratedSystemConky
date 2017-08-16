@@ -1,0 +1,126 @@
+#Conky Settings
+background yes
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+text_buffer_size 2048
+
+temperature_unit fahrenheit
+
+#Window Specification
+own_window no
+own_window_type normal
+own_window_transparent yes
+own_window_argb_visual yes
+
+
+border_inner_margin 0
+border_outer_margin 0
+
+# Adjust Resolution according to your screen
+minimum_size 1600 900
+maximum_width 1600
+
+alignment tr
+gap_x 0
+gap_y 0
+
+#Graphics Settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+#Text settings #
+use_xft yes
+xftfont monofur dreams:size=8
+xftalpha 0.5
+
+uppercase no
+temperature_unit celsius
+
+default_color ffffff
+
+#Lua Load #
+lua_load ~/.lua/scripts/haunted.lua
+lua_draw_hook_pre clock_rings
+
+## Adjust the values offset as per your requirements
+TEXT
+${offset 580}${voffset 0}${color dcdcdc}${font monofur:pixelsize=175}${time %H:%M}${font monofur}${offset -390}${voffset 30}${color dcdcdc}${font monofur:pixelsize=70}${time %a},${time %d} ${color dcdcdc}${font monofur:pixelsize=70}${time  %b}
+#${image ~/.conky/rev-eng.png}
+
+
+${offset 75}${voffset -370}${color ffffff}${font monofur:size=11:style=Bold}${exec whoami}@${nodename}
+${offset 75}${color ffffff}Linux ${kernel}
+${offset 75}${color ffffff}Uptime: ${uptime}
+
+${offset 75}${voffset 100}${font monofur:size=11:style=Bold}root: ${font monofur:size=10}${fs_used /}/${fs_size /}
+${offset 75}${voffset}${font monofur:size=11:style=Bold}data: ${font monofur:size=10}${fs_used /data}/${fs_size /data}
+${offset 75}${voffset}${color ffffff}${font monofur:size=11:style=Bold}swap: ${font monofur:size=10}${swap}/${swapfree}
+
+${offset 320}${voffset -61}${color ffffff}${font monofur:size=11}${color ffffff}IP Address: ${color ffffff}${addr wlp2s0}
+${offset 320}${color ffffff}${font monofur:size=11}${color ffffff}Down: ${color ffffff}${downspeed wlp2s0}
+${offset 320}${color ffffff}Up: ${color ffffff}${upspeed wlp2s0}
+
+       ${offset 75}${voffset 58}${color ffffff}${font monofur:size=12}${cpu cpu_avg_samples}%${offset 10}${color dcdcdc}${hwmon 2 temp 1}°C
+${offset 80}${voffset 2}${color ffffff}${font monofur:size=10}${top name 1} ${top cpu 1}
+${offset 80}${voffset}${color ffffff}${font monofur:size=10}${top name 2} ${top cpu 2}
+${offset 80}${voffset}${color ffffff}${font monofur:size=10}${top name 3} ${top cpu 3}
+${offset 80}${voffset}${color ffffff}${font monofur:size=10}${top name 4} ${top cpu 4}
+${offset 80}${voffset}${color ffffff}${font monofur:size=10}${top name 5} ${top cpu 5}
+${offset 80}${voffset}${color ffffff}${font monofur:size=10}${top name 6} ${top cpu 6}
+${offset 80}${voffset}${color ffffff}${font monofur:size=10}${top name 7} ${top cpu 7}
+${offset 80}${voffset}${color ffffff}${font monofur:size=10}${top name 8} ${top cpu 8}
+${offset 80}${voffset}${color ffffff}${font monofur:size=10}${top name 9} ${top cpu 9}
+${offset 80}${voffset}${color ffffff}${font monofur:size=10}${top name 10} ${top cpu 10}
+
+    ${offset 350}${voffset -186}${color ffffff}${font monofur:size=12}$mem/$memmax${offset 30}${color dcdcdc}
+${offset 350}${voffset 2}${color ffffff}${font monofur:size=10}${top_mem name 1} ${top_mem mem_res 1}
+${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 2} ${top_mem mem_res 2}
+${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 3} ${top_mem mem_res 3}
+${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 4} ${top_mem mem_res 4}
+${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 5} ${top_mem mem_res 5}
+${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 6} ${top_mem mem_res 6}
+${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 7} ${top_mem mem_res 7}
+${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 8} ${top_mem mem_res 8}
+${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 9} ${top_mem mem_res 9}
+${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 10} ${top_mem mem_res 10}
+
+${offset 1385}${voffset -33}${font monofur bold:pixelsize=18}Mustafa Özhan ${offset -110}${voffset 18}${color #dcdcdc}${font monofur:pixelsize=16}Arch Linux
+
+${voffset 110}
+${alignc}${offset }${voffset 3}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 11 item_title 0}
+${alignc}${offset }${voffset 3}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 11 item_title 1}${color}${font}
+${alignc}${offset }${voffset 3}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 11 item_title 2}${color}${font}
+${alignc}${offset }${voffset 3}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 11 item_title 3}${color}${font}
+${alignc}${offset }${voffset 3}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 11 item_title 4}${color}${font}
+${alignc}${offset }${voffset 3}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 11 item_title 5}${color}${font}
+${alignc}${offset }${voffset 3}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 11 item_title 6}${color}${font}
+${alignc}${offset }${voffset 3}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 11 item_title 7}${color}${font}
+${alignc}${offset }${voffset 3}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 11 item_title 8}${color}${font}
+${alignc}${offset }${voffset 3}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 11 item_title 9}${color}${font}
+
+${voffset -262}${font monofur:pixelsize=14}${color ffffff}${execpi 1400  gcalcli --refresh --detail_location --nolineart --nocolor --military agenda "$(date)" }
+
+
+
+
+
+#${voffset -120}${offset 500}${rss http://manjaro.org/feed/ 60 item_titles 3}
+#${execi 300 /home/mustafa/.conky/rss.sh http://forum.manjaro.org/feed/ 5 2}
+#${goto 10}${voffset -5}${memgraph cpu_avg_samples 40,120 dcdcdc dcdcdc}
+#${goto 10}${voffset -5}${cpugraph mem_avg_saples 40,120 dcdcdc dcdcdc}
+
+
+#${offset 75}${voffset -120}${font monofur:pixelsize=25}${color ffffff}Task
+#${voffset 10}${offset 0}${font monofur:pixelsize=15}${color ffffff}${tail ~/.todo  20 10}
+
+
