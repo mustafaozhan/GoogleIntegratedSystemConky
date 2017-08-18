@@ -6,7 +6,7 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 
 I used
 
-https://github.com/kunesj/conkyKeep for Google Keep integration.
+<a href="https://github.com/kunesj/conkyKeep">conkyKeep</a>for Google Keep integration.
 
 https://github.com/insanum/gcalcli for Google calendar integration.
 
