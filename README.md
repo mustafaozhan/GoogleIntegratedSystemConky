@@ -10,7 +10,7 @@ I used
 
 <a href="https://github.com/insanum/gcalcli">gcalcli</a> for Google calendar integration.
 
-And lastly apperance highly customized from  <a href="https://blog.icanbeacoder.com/inifinity-conky-theme/ ">
+And lastly apperance highly customized from  <a href="https://blog.icanbeacoder.com/inifinity-conky-theme/ ">inifinity-conky-theme</a>
 
 
 
