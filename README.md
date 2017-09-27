@@ -12,6 +12,4 @@ I used
 
 And lastly apperance highly customized from  <a href="https://blog.icanbeacoder.com/inifinity-conky-theme/ ">inifinity-conky-theme</a>
 
-
-
-
+All configuration based on 1600*900. Change it acording to your screen resolution.
