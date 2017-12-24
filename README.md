@@ -1,10 +1,16 @@
-# ConkyConfiguration
+# ArchGooglyConky
 This is my Arch linux conky configuration with conky, lua, Google Calendar and Google Keep
 
+# Supports
+
+-Google Calendar Integration
+-Google Keep Integration
+-RSS feed integration
+-Basic system information table(CPU,RAM,HDD/SSD,Date/Time ...)
 
 <img src="https://s19.postimg.org/bjuohjh2b/Untitled.png" />
 
-I used
+# Thanks to
 
 <a href="https://github.com/kunesj/conkyKeep">conkyKeep</a> for Google Keep integration.
 
