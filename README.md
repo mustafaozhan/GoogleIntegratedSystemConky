@@ -3,10 +3,10 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 
 # Supports
 
--Google Calendar Integration
--Google Keep Integration
--RSS feed integration
--Basic system information table(CPU,RAM,HDD/SSD,Date/Time ...)
+- Google Calendar Integration
+- Google Keep Integration
+- RSS feed integration
+- Basic system information table(CPU,RAM,HDD/SSD,Date/Time ...)
 
 <img src="https://s19.postimg.org/bjuohjh2b/Untitled.png" />
 
