@@ -1,6 +1,8 @@
 # ArchGooglyConky
 This is my Arch linux conky configuration with conky, lua, Google Calendar and Google Keep
 
+<img src="https://s19.postimg.org/bjuohjh2b/Untitled.png" />
+
 # Supports
 
 - Google Calendar Integration
@@ -8,7 +10,13 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 - RSS feed integration
 - Basic system information table(CPU,RAM,HDD/SSD,Date/Time ...)
 
-<img src="https://s19.postimg.org/bjuohjh2b/Untitled.png" />
+# Installation
+
+- copy .config/ .lua/ and .conkyrc to your home directory
+- make /background/wallpaper.png background
+- change profile image with yours (You can use gimp as a editor and for good looking you can make it grayscale)
+- make configurations of <a href="https://github.com/kunesj/conkyKeep">conkyKeep</a>
+- make configurations of <a href="https://github.com/insanum/gcalcli">gcalcli</a>
 
 # Thanks to
 
