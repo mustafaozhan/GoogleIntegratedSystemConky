@@ -18,6 +18,17 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 - make configurations of <a href="https://github.com/kunesj/conkyKeep">conkyKeep</a>
 - make configurations of <a href="https://github.com/insanum/gcalcli">gcalcli</a>
 
+# Configuration
+
+Configuration based on 1600*900. Change it acording to your screen resolution.
+
+- Xfce panel size is 46
+- plank Icon size is 46
+- Xfce panel color is same as background
+- You have to have your notes titled To-do in your Google Keep.
+
+If you will have so much notes in your Google Keep or events in your Google Calendar panel will not cut your rows by this configurations.
+
 # Thanks to
 
 <a href="https://github.com/kunesj/conkyKeep">conkyKeep</a> for Google Keep integration.
@@ -26,4 +37,4 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 
 And lastly apperance highly customized from  <a href="https://blog.icanbeacoder.com/inifinity-conky-theme/ ">inifinity-conky-theme</a>
 
-All configuration based on 1600*900. Change it acording to your screen resolution.
+
