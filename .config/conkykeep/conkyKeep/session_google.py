@@ -154,13 +154,17 @@ class SessionGoogle:
             elif rn['type'] == "LIST": # if List note (root note type)
                 for cn in childNotes:
                     if rn['formatedText'] != "":
-                        rn['formatedText'] += "\n"
-
+                    	if cn['checked']:
+                    		pass
+                    	else:
+                    		rn['formatedText'] += "\n"
+                        
                     if cn['checked']:
-                        rn['formatedText'] += "[X] "
+                        pass
                     else:
                         rn['formatedText'] += ""
-                    rn['formatedText'] += cn['formatedText']
+                        rn['formatedText'] += cn['formatedText']
+                    
 
             ## Child type notes
             elif rn['type'] == 'LIST_ITEM': # if text note or list item
@@ -183,9 +187,6 @@ class SessionGoogle:
                     'type': "NOTE",
                     'id': 0
                 }
-
-                if 'color' in n:
-                    _note['color'] = n['color']
                 if 'title' in n:
                     _note['title'] = n['title']
                 if 'type' in n:
