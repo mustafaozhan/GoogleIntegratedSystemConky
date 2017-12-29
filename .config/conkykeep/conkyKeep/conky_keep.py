@@ -28,39 +28,11 @@ if not os.path.isfile(conf_path):
 
 # get app resource paths
 path = os.path.dirname(os.path.abspath(__file__))
-colors_path = os.path.join(path, 'colors')
 
 line_height = 17
 line_width = 8
 line_height_title = 16
 line_width_title = 10
-
-def getColorPath(color):
-    """
-    Returns:
-        pathToBackgroundImage
-    """
-    return_path = os.path.join(colors_path, 'DEFAULT.png')
-    if color == 'TEAL':
-        return_path = os.path.join(colors_path, 'TEAL.png')
-    elif color == 'RED':
-        return_path = os.path.join(colors_path, 'RED.png')
-    elif color == 'GREEN':
-        return_path = os.path.join(colors_path, 'GREEN.png')
-    elif color == 'BLUE':
-        return_path = os.path.join(colors_path, 'BLUE.png')
-    elif color == 'GRAY':
-        return_path = os.path.join(colors_path, 'GRAY.png')
-    elif color == 'ORANGE':
-        return_path = os.path.join(colors_path, 'ORANGE.png')
-    elif color == 'YELLOW':
-        return_path = os.path.join(colors_path, 'YELLOW.png')
-    elif color in ['DEFAULT', 'WHITE', None, 'None']:
-        return_path = os.path.join(colors_path, 'DEFAULT.png')
-    else:
-        print("${color white}Unknown color %s${color}" % (str(color),), end="")
-
-    return return_path
 
 def getNoteSize(note):
     """
@@ -89,8 +61,6 @@ def format_conky_note(note, vertical_offset=0, conky_width=330):
     vertical_offset - vartical position of note
     conky_width - width of conky (max width of shown notes)
     """
-    # get path to background color image
-    colorPath = getColorPath(note['color'])
 
     # background color height
     height, width = getNoteSize(note)
@@ -115,7 +85,7 @@ def format_conky_note(note, vertical_offset=0, conky_width=330):
     print("${font monofur:pixelsize=14}", end="")
     for line in note['text'].split('\n'):
         line = line.strip().replace("#","\#").replace("$","$$")
-        print("${goto %i}${voffset 3}${alignr}%s" % (rgoto_text, line))
+        print("${goto %i}${voffset 2}${alignr}%s" % (rgoto_text, line))
 
     # reset font + color
     print("${color}${font}", end="")
