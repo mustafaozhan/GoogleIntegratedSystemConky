@@ -12,11 +12,10 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 
 # Installation
 
-- copy .config/ .lua/ and .conkyrc to your home directory
-- make /background/wallpaper.png background
 - change profile image with yours (You can use gimp as a editor and for good looking you can make it grayscale)
 - make configurations of <a href="https://github.com/kunesj/conkyKeep">conkyKeep</a>
 - make configurations of <a href="https://github.com/insanum/gcalcli">gcalcli</a>
+
  # Arch Linux users
   ```
   yaourt -S gcalcli
