@@ -38,6 +38,6 @@ If you will have so much notes in your Google Keep or events in your Google Cale
 
 <a href="https://github.com/insanum/gcalcli">gcalcli</a> for Google calendar integration.
 
-And lastly apperance highly customized from  <a href="https://blog.icanbeacoder.com/inifinity-conky-theme/ ">inifinity-conky-theme</a>
+And lastly apperance highly customized from  <a href="https://blog.icanbeacoder.com/inifinity-dark-conky-theme-v2/">inifinity-dark-conky-theme-v2</a>
 
 
