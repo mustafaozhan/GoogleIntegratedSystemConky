@@ -97,7 +97,6 @@ settings_table = {
 		start_angle=60,
 		end_angle=120
 	},
-	
 	{
 		name='memperc',
 		arg='',
@@ -154,7 +153,7 @@ settings_table = {
 		start_angle=-90,
 		end_angle=30
 	},
-		{
+	{
 		name='',
 		arg='',
 		max=100,
@@ -184,21 +183,11 @@ settings_table = {
 	},
 }
 
-
 clock_r=125
-
-
-
 clock_x=1460
 clock_y=165
-
-
-
 clock_colour=0xffffff
 clock_alpha=0.5
-
-
-
 show_seconds=true
 
 require 'cairo'
@@ -217,14 +206,10 @@ function draw_ring(cr,t,pt)
 	local angle_f=ea*(2*math.pi/360)-math.pi/2
 	local t_arc=t*(angle_f-angle_0)
 
-	
-
 	cairo_arc(cr,xc,yc,ring_r,angle_0,angle_f)
 	cairo_set_source_rgba(cr,rgb_to_r_g_b(bgc,bga))
 	cairo_set_line_width(cr,ring_w)
 	cairo_stroke(cr)
-
-	
 
 	cairo_arc(cr,xc,yc,ring_r,angle_0,angle_0+t_arc)
 	cairo_set_source_rgba(cr,rgb_to_r_g_b(fgc,fga))
@@ -243,8 +228,6 @@ function draw_clock_hands(cr,xc,yc)
 	mins_arc=(2*math.pi/60)*mins+secs_arc/60
 	hours_arc=(2*math.pi/12)*hours+mins_arc/12
 
-	
-
 	xh=xc+0.7*clock_r*math.sin(hours_arc)
 	yh=yc-0.7*clock_r*math.cos(hours_arc)
 	cairo_move_to(cr,xc,yc)
@@ -255,8 +238,6 @@ function draw_clock_hands(cr,xc,yc)
 	cairo_set_source_rgba(cr,rgb_to_r_g_b(clock_colour,clock_alpha))
 	cairo_stroke(cr)
 
-	
-
 	xm=xc+clock_r*math.sin(mins_arc)
 	ym=yc-clock_r*math.cos(mins_arc)
 	cairo_move_to(cr,xc,yc)
@@ -264,8 +245,6 @@ function draw_clock_hands(cr,xc,yc)
 
 	cairo_set_line_width(cr,5)
 	cairo_stroke(cr)
-
-	
 
 	if show_seconds then
 		xs=xc+clock_r*math.sin(secs_arc)
@@ -293,8 +272,6 @@ function conky_clock_rings()
 		draw_ring(cr,pct,pt)
 	end
 
-	
-
 	if conky_window==nil then return end
 	local cs=cairo_xlib_surface_create(conky_window.display,conky_window.drawable,conky_window.visual, conky_window.width,conky_window.height)
 
@@ -311,7 +288,6 @@ function conky_clock_rings()
 
 	draw_clock_hands(cr,clock_x,clock_y)
 end
-
 --[[ RING WIDGET ]]
 --[[ Options (name, arg, max, bg_colour, bg_alpha, xc, yc, radius, thickness, start_angle, end_angle):
 	"name" is the type of stat to display; you can choose from 'cpu', 'memperc', 'fs_used_perc', 'battery_used_perc'.
@@ -326,7 +302,6 @@ end
 	"thickness" is the thickness of the ring, centred around the radius.
 	"start_angle" is the starting angle of the ring, in degrees, clockwise from top. Value can be either positive or negative.
 	"end_angle" is the ending angle of the ring, in degrees, clockwise from top. Value can be either positive or negative, but must be larger (e.g. more clockwise) than start_angle. ]]
-
 function ring(cr, name, arg, max, bgc, bga, fgc, fga, xc, yc, r, t, sa, ea)
 	local function rgb_to_r_g_b(colour,alpha)
 		return ((colour / 0x10000) % 0x100) / 255., ((colour / 0x100) % 0x100) / 255., (colour % 0x100) / 255., alpha
@@ -336,16 +311,12 @@ function ring(cr, name, arg, max, bgc, bga, fgc, fga, xc, yc, r, t, sa, ea)
 		local angle_0=sa*(2*math.pi/360)-math.pi/2
 		local angle_f=ea*(2*math.pi/360)-math.pi/2
 		local pct_arc=pct*(angle_f-angle_0)
-
 		-- Draw background ring
-
 		cairo_arc(cr,xc,yc,r,angle_0,angle_f)
 		cairo_set_source_rgba(cr,rgb_to_r_g_b(bgc,bga))
 		cairo_set_line_width(cr,t)
 		cairo_stroke(cr)
-	
 		-- Draw indicator ring
-
 		cairo_arc(cr,xc,yc,r,angle_0,angle_0+pct_arc)
 		cairo_set_source_rgba(cr,rgb_to_r_g_b(fgc,fga))
 		cairo_stroke(cr)
