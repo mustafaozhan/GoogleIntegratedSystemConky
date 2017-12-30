@@ -12,7 +12,8 @@ start_cp()
 	echo 'starting'
 	folderPath=$(dirname $0)
 	cd "$folderPath"
-	conky -d -c conkyKeepRc
+	conky -b -c conkyrc
+	conky -d -c conkyKeepRc &
 }
 
 #

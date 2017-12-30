@@ -49,7 +49,7 @@ temperature_unit celsius
 default_color ffffff
 
 #Lua Load #
-lua_load ~/.lua/scripts/haunted.lua
+lua_load ~/.config/GoogleIntegratedSystemConky/lua/scripts/haunted.lua
 lua_draw_hook_pre clock_rings
 
 ## Adjust the values offset as per your requirements
