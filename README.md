@@ -12,11 +12,16 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 
 # Installation
 
-- change profile image with yours (You can use gimp as a editor and for good looking you can make it grayscale)
-- make configurations of <a href="https://github.com/kunesj/conkyKeep">conkyKeep</a>
-- make configurations of <a href="https://github.com/insanum/gcalcli">gcalcli</a>
+- Be sure you have dependencies of <a href="https://github.com/kunesj/conkyKeep">conkyKeep</a>
+- Install <a href="https://github.com/insanum/gcalcli">gcalcli</a>
 
- # Arch Linux users
+```
+git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh install.sh
+```
+- Go to the ~/.config/GoogleIntegratedSystemConky/background/ and choose a walpaper and add your profile picture in the circle (You can use gimp as a editor and for good looking you can make it grayscale)
+- In ~/.config/GoogleIntegratedSystemConky/config.xml put your google mail address and password for notes
+
+ # gcalcli installation for Arch Linux users
   ```
   yaourt -S gcalcli
   ```
@@ -28,7 +33,7 @@ Configuration based on 1600*900. Change it acording to your screen resolution.
 - Xfce panel size is 46
 - plank Icon size is 46
 - Xfce panel color is same as background
-- You have to have your notes titled To-do in your Google Keep.
+- You have to have your notes titled To-do in your Google Keep. (To change it ~/.config/GoogleIntegratedSystemConky/config.xml)
 
 If you will have so much notes in your Google Keep or events in your Google Calendar panel will not cut your rows by this configurations.
 

@@ -1,15 +1,3 @@
---[[
-Infinity-dark by Harshit 
-This script draws the left rings of the screen that is with the clock
-
-To call this script in Conky, use the following (assuming that you save this script to ~/scripts/rings.lua):
-	lua_load ~/scripts/haunted.lua
-	lua_draw_hook_pre ring_stats
-	
-Changelog:
-+ v1.0 -- Original release (07/06/2012)
-]]
-
 settings_table = {
 	{
 		-- Edit this table to customise your rings.
@@ -382,5 +370,3 @@ function ring(cr, name, arg, max, bgc, bga, fgc, fga, xc, yc, r, t, sa, ea)
 	
 	if update_num>5 then setup_ring() end
 end
-
---[[ END RING WIDGET ]]
