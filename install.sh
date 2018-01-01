@@ -1,4 +1,4 @@
 #!/bin/bash
-mv /fonts ~/.local/share/ ;
+mv fonts/ ~/.local/share/ ;
 cd ..
-mv /GoogleIntegratedSystemConky ~/.config
+mv GoogleIntegratedSystemConky/ ~/.config
