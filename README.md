@@ -34,24 +34,24 @@ sudo pip3 install beautifulsoup4 requests lxml
 
 ```
 
-- Installing dependecies of Google Keep Integration
+- Installing dependecies of Google Calendar Integration
 ```
 sudo pip2.7 install gcalcli
 
 ```
-
-- Install <a href="https://github.com/insanum/gcalcli">gcalcli</a>
+- Install
 
 ```
 git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh install.sh
 ```
 - Go to the ~/.config/GoogleIntegratedSystemConky/background/ and choose a walpaper and add your profile picture in the circle (You can use gimp as a editor and for good looking you can make it grayscale)
+
 - In ~/.config/GoogleIntegratedSystemConky/config.xml put your google mail address and password for notes
 
- # gcalcli installation for Arch Linux users
-  ```
-  yaourt -S gcalcli
-  ```
+- start with
+```
+sh ~/.config/GoogleIntegratedSystemConky/gisc.sh start
+```
 
 # Configuration
 
