@@ -39,4 +39,4 @@ imlib_cache_size 0
 text_buffer_size 6000
 
 TEXT
-${execp python3 -m conkyKeep }
+${execp python3 -m python }

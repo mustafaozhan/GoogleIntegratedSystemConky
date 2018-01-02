@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-# Run this script to start or stop conkyKeep
+# Run this script to start or stop gisc
 
 
 
 #
-# start conkyKeep
+# start gisc
 #
 start_cp()
 {
@@ -17,15 +17,15 @@ start_cp()
 }
 
 #
-# stop conkyKeep
+# stop gisc
 #
 stop_cp()
 {
 	echo 'stopping'
-	PID=$(ps -C conky a | grep 'conkyKeep' | grep '\-d' | awk {'print $1'})
+	PID=$(ps -C conky a | grep 'gisc' | grep '\-d' | awk {'print $1'})
 	if [ -z "$PID" ]
 	then
-		echo "No running ConkyKeep instances found"
+		echo "No running gisc instances found"
 	else	
 		kill -9 $PID
 	fi
@@ -37,9 +37,9 @@ stop_cp()
 echo_manual()
 {
 	echo '--- Usage ---'
-	echo 'Starting conkyKeep: ./conkyKeep.sh start'
-	echo 'Stopping conkyKeep: ./conkyKeep.sh stop'
-	echo 'Restarting conkyKeep: ./conkyKeep.sh restart'
+	echo 'Starting gisc: ./gisc.sh start'
+	echo 'Stopping gisc: ./gisc.sh stop'
+	echo 'Restarting gisc: ./gisc.sh restart'
 }
 
 if [ $1 ]; then
