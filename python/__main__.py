@@ -2,5 +2,4 @@
 # encoding: utf-8
 
 from python.conky_keep import main
-
 main()
