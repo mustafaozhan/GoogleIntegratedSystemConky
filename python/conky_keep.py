@@ -7,7 +7,7 @@ import os, sys
 from bs4 import BeautifulSoup
 
 
-from conkyKeep.session_google import SessionGoogle
+from python.session_google import SessionGoogle
 
 
 # get path to app dir
@@ -28,11 +28,11 @@ else: # config in ~/.config/conkykeep folder
 
         import appdirs
 
-        app_config_dir = appdirs.user_config_dir('conkykeep')
+        app_config_dir = appdirs.user_config_dir('GoogleIntegratedSystemConky')
 
     except:
 
-        app_config_dir = os.path.join(os.path.expanduser("~"), '.config', 'conkykeep')
+        app_config_dir = os.path.join(os.path.expanduser("~"), '.config', 'GoogleIntegratedSystemConky')
 
     conf_path = os.path.join(app_config_dir, conf_file)
 

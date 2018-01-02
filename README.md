@@ -12,7 +12,13 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 
 # Installation
 
-- Be sure you have dependencies of <a href="https://github.com/kunesj/conkyKeep">conkyKeep</a>
+- Installing dependecies of Google Keep Integration
+
+```
+sudo pip3 install beautifulsoup4 requests lxml
+
+```
+
 - Install <a href="https://github.com/insanum/gcalcli">gcalcli</a>
 
 ```
