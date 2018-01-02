@@ -16,34 +16,21 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 
 Ubuntu Derivative
 ```
-sudo apt-get install conky-all python3-pip python2-pip
-
+sudo apt-get install conky-all python3-pip python-pip
+sudo pip3 install beautifulsoup4 requests lxml
+sudo pip install gcalcli
+git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh install.sh
 ```
 
 Arch Linux Derivative
 ```
 sudo pacman -S python3-pip python2-pip
 yaourt -S conky-lua
-
-```
-
-- Installing dependecies of Google Keep Integration
-
-```
 sudo pip3 install beautifulsoup4 requests lxml
-
-```
-
-- Installing dependecies of Google Calendar Integration
-```
 sudo pip2.7 install gcalcli
-
-```
-- Install
-
-```
 git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh install.sh
 ```
+
 - Go to the ~/.config/GoogleIntegratedSystemConky/background/ and choose a walpaper and add your profile picture in the circle (You can use gimp as a editor and for good looking you can make it grayscale)
 
 - In ~/.config/GoogleIntegratedSystemConky/config.xml put your google mail address and password for notes
