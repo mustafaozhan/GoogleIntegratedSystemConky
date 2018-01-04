@@ -11,21 +11,16 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 - Basic system information table(CPU,RAM,HDD/SSD,Date/Time ...)
 
 # Installation
-Ubuntu Derivative
+- Ubuntu & Derivatives (untested)
 ```
-sudo apt-get install conky-all python3-pip python-pip
-sudo pip3 install beautifulsoup4 requests lxml
-sudo pip install gcalcli
-git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh install.sh
+sudo apt-get install conky-all python3-pip python-pip ; sudo pip3 install beautifulsoup4 requests lxml ; sudo pip install gcalcli ; git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh ; install.sh
 ```
 
-Arch Linux Derivative
+- Arch Linux & Derivatives (tested)
+
+  You should have ```yaourt``` installed
 ```
-sudo pacman -S python3-pip python2-pip
-yaourt -S conky-lua
-sudo pip3 install beautifulsoup4 requests lxml
-sudo pip2.7 install gcalcli
-git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh install.sh
+sudo pacman -S python-pip python2-pip ; yaourt -S conky-lua ; sudo pip3 install beautifulsoup4 requests lxml ; sudo pip2.7 install gcalcli ; git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh install.sh
 ```
 
 - Go to the ~/.config/GoogleIntegratedSystemConky/background/ and choose a walpaper and add your profile picture in the circle (You can use gimp as a editor and for good looking you can make it grayscale)
