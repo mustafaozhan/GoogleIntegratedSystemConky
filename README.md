@@ -32,6 +32,9 @@ sudo pacman -S python-pip python2-pip ; yaourt -S conky-lua ; sudo pip3 install 
 sh ~/.config/GoogleIntegratedSystemConky/gisc.sh start
 ```
 
+- In first time a windows with your default browser will be openned and it will ask for your gmail permission for calendar. After that if it will print any error on the desktop kill conky with 
+```killall conky``` than start it back with ```sh ~/.config/GoogleIntegratedSystemConky/gisc.sh start```
+
 # Configuration
 Configuration based on 1600*900. Change it acording to your screen resolution.
 
