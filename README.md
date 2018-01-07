@@ -12,6 +12,7 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 
 # Installation
 - Ubuntu & Derivatives (untested)
+
 You should have ```git``` installed
 ```
 sudo apt-get install conky-all python3-pip python-pip ; sudo pip3 install beautifulsoup4 requests lxml ; sudo pip install gcalcli ; git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh ; install.sh
