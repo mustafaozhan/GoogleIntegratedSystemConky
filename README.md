@@ -20,7 +20,7 @@ sudo apt-get install conky-all python3-pip python-pip ; sudo pip3 install beauti
 
 - Arch Linux & Derivatives (tested)
 
-  You should have ```yaourt``` installed
+  You should have ```yaourt``` and ```git``` installed
 ```
 sudo pacman -S python-pip python2-pip ; yaourt -S conky-lua ; sudo pip3 install beautifulsoup4 requests lxml ; sudo pip2.7 install gcalcli ; git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh install.sh
 ```
