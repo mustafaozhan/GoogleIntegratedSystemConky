@@ -1,7 +1,7 @@
 # Google Integrated System Conky
 This is my Arch linux conky configuration with conky, lua, Google Calendar and Google Keep
 
-<img src="https://s19.postimg.org/bjuohjh2b/Untitled.png" />
+<img src="https://s19.postimg.org/8ihw0d29v/gisc.png" />
 
 # Supports
 
