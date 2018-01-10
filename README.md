@@ -11,14 +11,14 @@ This is my Arch linux conky configuration with conky, lua, Google Calendar and G
 - Basic system information table(CPU,RAM,HDD/SSD,Date/Time ...)
 
 # Installation
-- Ubuntu & Derivatives
+- <b>Ubuntu & Derivatives</b>
 
 You should have ```git``` installed
 ```
 sudo apt-get install conky-all python3-pip python-pip ; sudo pip3 install beautifulsoup4 requests lxml ; sudo pip install gcalcli ; git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh ; install.sh
 ```
 
-- Arch Linux & Derivatives
+- <b>Arch Linux & Derivatives</b>
 
   You should have ```yaourt``` and ```git``` installed
 ```
