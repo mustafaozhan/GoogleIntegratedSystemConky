@@ -12,8 +12,6 @@ no_buffers yes
 
 text_buffer_size 2048
 
-temperature_unit fahrenheit
-
 #Window Specification
 own_window no
 own_window_type normal

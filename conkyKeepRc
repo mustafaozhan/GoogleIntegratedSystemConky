@@ -2,7 +2,6 @@
 # Also set own_window_type to normal if you use Xfce
 update_interval 1500.0
 total_run_times 0
-#minimum_size 330 1080
 alignment tr
 gap_x 0
 gap_y 611
