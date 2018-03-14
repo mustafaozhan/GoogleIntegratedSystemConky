@@ -2,8 +2,8 @@
 <configuration>
 	<login>
 		<!-- use your Google username or mail-address -->
-		<username>YOUR MAIL</username>
-		<password>YOUR PASSWORD</password>
+		<username>Your Email</username>
+		<password>Your Password</password>
 	</login>
     <!-- Filter which notes should be shown -->
 	<filter>

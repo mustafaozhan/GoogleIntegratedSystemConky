@@ -94,16 +94,16 @@ ${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 10} 
 
 ${offset 1385}${voffset -33}${font monofur bold:pixelsize=18}Mustafa Özhan ${offset -110}${voffset 18}${color #dcdcdc}${font monofur:pixelsize=16}Arch Linux
 
-${alignc}${offset }${voffset 125}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 0}
-${alignc}${offset }${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 1}${color}${font}
-${alignc}${offset }${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 2}${color}${font}
-${alignc}${offset }${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 3}${color}${font}
-${alignc}${offset }${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 4}${color}${font}
-${alignc}${offset }${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 5}${color}${font}
-${alignc}${offset }${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 6}${color}${font}
-${alignc}${offset }${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 7}${color}${font}
-${alignc}${offset }${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 8}${color}${font}
-${alignc}${offset }${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 9}${color}${font}
-${alignc}${offset }${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 10}${color}${font}
+${alignc}${offset}${voffset 125}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 0}
+${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 1}${color}${font}
+${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 2}${color}${font}
+${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 3}${color}${font}
+${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 4}${color}${font}
+${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 5}${color}${font}
+${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 6}${color}${font}
+${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 7}${color}${font}
+${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 8}${color}${font}
+${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 9}${color}${font}
+${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 10}${color}${font}
 
-${voffset -262}${font monofur:pixelsize=14}${color ffffff}${execpi 1400  gcalcli --refresh --detail_location --nolineart --nocolor --military agenda "$(date)" }
+${voffset -265}${font monofur:pixelsize=14}${color ffffff}${execpi 1400 gcalcli --refresh --detail_location --nolineart --nocolor --military agenda "$(date)" }
