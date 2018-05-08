@@ -106,4 +106,8 @@ ${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss h
 ${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 9}${color}${font}
 ${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 10}${color}${font}
 
+<<<<<<< HEAD
 ${voffset -263}${font monofur:pixelsize=14}${color ffffff}${execpi 1400 gcalcli --refresh --detail_location --nolineart --nocolor --military agenda "$(date)" }
+=======
+${voffset -265}${font monofur:pixelsize=14}${color ffffff}${execpi 1400 gcalcli --refresh --detail_location --nolineart --nocolor --military agenda "$(date)" }
+>>>>>>> caf582bb6c7949c8e9c7b92bb69f0b54da16d5b1
