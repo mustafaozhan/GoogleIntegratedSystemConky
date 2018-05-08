@@ -3,12 +3,13 @@
 
 import sys
 import copy
+
 import requests
 from bs4 import BeautifulSoup
+
 import json
 
 class SessionGoogle:
-
     """
     Google Login code is based on http://stackoverflow.com/a/24881998
     googleKeep_data - Notes from GoogleKeep
@@ -35,45 +36,57 @@ class SessionGoogle:
     data['isArchived']
     +other
     """
+
     googleKeep_data_raw = []
     googleKeep_data = []
 
-    def __init__(self, login, pwd, url_login="https://accounts.google.com/ServiceLogin", url_auth="https://accounts.google.com/ServiceLoginAuth"):
+    def __init__(self, login, pwd, url_login="https://accounts.google.com/ServiceLogin", \
+        url_auth="https://accounts.google.com/ServiceLoginAuth", note_list_hide_checked=True ):
+
+        self.note_list_hide_checked = note_list_hide_checked
 
         self.ses = requests.session()
         login_html = self.ses.get(url_login).text
         soup_login = BeautifulSoup(login_html, "lxml").find('form').findAll('input')
         dico = {}
-
         for u in soup_login:
             if u.get('value') is not None:
                 dico[u['name']] = u['value']
-
         # override the inputs with out login and pwd:
         dico['Email'] = login
         dico['Passwd'] = pwd
-
         self.ses.post(url_auth, data=dico)
-    def get(self, URL):
 
+    def get(self, URL):
         return self.ses.get(URL).text
 
-    def googleKeep_getNotes(self, raw=False):
+    def getFile(self, URL):
+        response = self.ses.get(URL)
+        if not response.ok:
+            raise Exception("Failed to download image from google: %s" % URL)
 
+        filename = None
+        for disp in response.headers['Content-Disposition'].split(";"):
+            if disp.startswith("filename="):
+                filename = disp[10:-1]
+                break;
+
+        return filename, response.content
+
+    def googleKeep_getNotes(self, raw=False):
         html = self.get("https://keep.google.com/")
-        #with open('html_dump', 'w') as f:
+        # with open('html_dump', 'w') as f:
         #    print("saving html to html_dump..."); f.write(html)
+
         # get part of html with notes data
         html_s = html.split("// Google Inc.")
         bs = BeautifulSoup("<html><body>"+html_s[-1].strip(), "lxml")
 
         # find correct script: "<script type="text/javascript">preloadUserInfo(JSON.parse("
         script = None
-
         for s in bs.body.findAll('script', attrs={'type': 'text/javascript'}):
             if s.text.strip().startswith("preloadUserInfo(JSON.parse("):
                 script = s; continue
-
         if script is None:
             raise Exception("Couldn't find correct <script> tag!")
 
@@ -90,25 +103,29 @@ class SessionGoogle:
 
         # remove redundant \
         data = data.replace('\\\\','\\')
+
         # decode json string
         self.googleKeep_data_raw = json.loads(data) # encodes string to utf-8 ?
 
         if not raw:
             self.googleKeep_data = []
             for data in self.googleKeep_data_raw:
-                # ignore trashed (removed) notes
-                trashed = data['timestamps']['trashed']
-                if trashed != '1970-01-01T00:00:00.000Z':
-                    continue
+                if 'trashed' in data['timestamps']:
+                    if data['timestamps']['trashed'] != '1970-01-01T00:00:00.000Z':
+                        continue
+                if 'deleted' in data['timestamps']:
+                    if data['timestamps']['deleted'] != '1970-01-01T00:00:00.000Z':
+                        continue
                 self.googleKeep_data.append(data)
+
             # create note tree
             self.googleKeep_data = self.googleKeep_getNotesTree(self.googleKeep_data)
         else:
             self.googleKeep_data = self.googleKeep_data_raw
+
         return self.googleKeep_data
 
     def googleKeep_getNotesTree(self, notes):
-
         """
         Autocalled by googleKeep_getNotes
         """
@@ -118,12 +135,14 @@ class SessionGoogle:
             if cn['parentId'] == 'root':
                 root_notes.append(cn)
                 continue
+
             # add child notes to parent notes
             for pn in notes:
                 if cn['parentId'] == pn['id']:
                     if 'childNotes' not in pn:
                         pn['childNotes'] = []
                     pn['childNotes'].append(cn)
+
         return root_notes
 
     def googleKeep_formatNotes(self, notes, child=False):
@@ -132,12 +151,16 @@ class SessionGoogle:
         """
         # create copy of notes before modifications
         notes = copy.deepcopy(notes)
+        # add missing sortValue
+        for n in notes:
+            if 'sortValue' not in n: n['sortValue'] = 0
+        # sort notes (also later sorts children notes in recursive runs)
+        notes = sorted(notes, key=lambda k: int(k['sortValue']), reverse=True)
 
         for rn in notes:
             # recursivelly format child notes
             if 'childNotes' in rn:
                 childNotes = self.googleKeep_formatNotes(rn['childNotes'], child=True)
-
             # create formated text variable
             if 'text' not in rn:
                 rn['text'] = ""
@@ -150,24 +173,24 @@ class SessionGoogle:
                     if rn['formatedText'] != "":
                         rn['formatedText'] += "\n"
                     rn['formatedText'] += cn['formatedText']
+
             elif rn['type'] == "LIST": # if List note (root note type)
                 for cn in childNotes:
+                    if 'checked' in cn:
+                        if cn['checked'] and self.note_list_hide_checked:
+                            continue
+
                     if rn['formatedText'] != "":
-                    	if cn['checked']:
-                    		pass
-                    	else:
-                    		rn['formatedText'] += "\n"
-                    if cn['checked']:
-                        pass
-                    else:
-                        rn['formatedText'] += ""
-                        rn['formatedText'] += cn['formatedText']
-                    
+                        rn['formatedText'] += "\n"
+
+                    rn['formatedText'] += cn['formatedText']
+
             ## Child type notes
             elif rn['type'] == 'LIST_ITEM': # if text note or list item
                 rn['formatedText'] = rn['text']
+
             elif rn['type'] == 'BLOB': # if image note
-                rn['formatedText'] = "[BLOB mime='"+rn['blob']['mimetype']+"' url='https://keep.google.com/media/"+rn['blob']["media_id"]+"']"
+                rn['formatedText'] = "[BLOB mime='"+rn['blob']['mimetype']+"' url='https://keep.google.com/media/v2/"+rn['parentServerId']+"/"+rn['serverId']+"']"
             else:
                 print("Unknown NoteType:%s not implemented!", (rn['type'],))
 
@@ -182,12 +205,16 @@ class SessionGoogle:
                     'type': "NOTE",
                     'id': 0
                 }
+
+                if 'color' in n:
+                    _note['color'] = n['color']
                 if 'title' in n:
                     _note['title'] = n['title']
                 if 'type' in n:
                     _note['type'] = n['type']
                 if 'id' in n:
                     _note['id'] = n['id']
+
                 formated_notes.append(_note)
         else:
             formated_notes = notes
@@ -195,9 +222,7 @@ class SessionGoogle:
         return formated_notes
 
 if __name__ == "__main__":
-
     print("USAGE: python3 session_google.py USERNAME PASSWORD")
-
     if len(sys.argv)!=3:
         print("ERROR: Bad number of arguments")
         sys.exit(2)
@@ -206,6 +231,7 @@ if __name__ == "__main__":
     notes = session.googleKeep_getNotes()
     notes = session.googleKeep_getNotesTree(notes)
     f_notes = session.googleKeep_formatNotes(notes)
+
     for note in f_notes:
         print("---------------------------------------------------------------")
         print(note)
