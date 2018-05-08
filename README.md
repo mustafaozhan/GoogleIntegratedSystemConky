@@ -40,8 +40,8 @@ sh ~/.config/GoogleIntegratedSystemConky/gisc.sh start
 # Configuration
 Configuration based on 1600*900. Change it acording to your screen resolution.
 
-- Xfce panel size is 46
-- plank Icon size is 46
+- Xfce panel size is 44
+- plank Icon size is 44
 - Xfce panel color is same as background
 - You have to have your notes titled To-do in your Google Keep. (To change it ~/.config/GoogleIntegratedSystemConky/config.xml)
 
