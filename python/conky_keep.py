@@ -92,8 +92,7 @@ def get_config():
     conf = {}
 
     # login info
-    login_conf = {'username': bs_conf.login.username.text.strip(), \
-        'password': bs_conf.login.password.text.strip()}
+    login_conf = {'username': bs_conf.login.username.text.strip(),'password': bs_conf.login.password.text.strip()}
     conf['login'] = login_conf
 
     # filter
@@ -124,12 +123,11 @@ def main():
     config = get_config()
     vertical_offset = int(line_height/2)
     try:
-        session = SessionGoogle(config['login']['username'], \
-            config['login']['password'])
+        session = SessionGoogle(config['login']['username'],config['login']['password'])
         notes = session.googleKeep_formatNotes(session.googleKeep_getNotes())
 
     except Exception:
-    	print("Connection to GoogleKeep failed!!!")
+    	print("Connection to Google Keep failed !")
     	sys.exit(0)
 
     filtered_notes = []
@@ -137,12 +135,10 @@ def main():
     for note in notes:
         allowed = False
         if config['filter']['removeall']:
-            if (note['id'] in config['filter']['ids']) or \
-            (note['title'].lower() in config['filter']['titles']):
+            if (note['id'] in config['filter']['ids']) or (note['title'].lower() in config['filter']['titles']):
                 allowed = True
         else:
-            if (note['id'] not in config['filter']['ids']) and \
-                (note['title'].lower() not in config['filter']['titles']):
+            if (note['id'] not in config['filter']['ids']) and (note['title'].lower() not in config['filter']['titles']):
                 allowed = True
         if allowed:
             filtered_notes.append(note)
