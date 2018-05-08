@@ -129,7 +129,8 @@ def main():
         notes = session.googleKeep_formatNotes(session.googleKeep_getNotes())
 
     except Exception:
-        sys.exit(0)
+    	print("Connection to GoogleKeep failed!!!")
+    	sys.exit(0)
 
     filtered_notes = []
     max_width = 0
