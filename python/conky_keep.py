@@ -78,7 +78,7 @@ def format_conky_note(note, vertical_offset=0, conky_width=330):
 
     for line in note['text'].split('\n'):
         line = line.strip().replace("#","\#").replace("$","$$")
-        print("${goto %i}${voffset 2}${alignr}%s" % (rgoto_text, line))
+        print("${goto %i}${voffset 0}${alignr}%s" % (rgoto_text, line))
 
     # reset font + color
     print("${color}${font}", end="")
