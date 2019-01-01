@@ -126,8 +126,10 @@ def main():
         session = SessionGoogle(config['login']['username'],config['login']['password'])
         notes = session.googleKeep_formatNotes(session.googleKeep_getNotes())
 
-    except Exception:
+    except Exception as e:
     	print("Connection to Google Keep failed !")
+    	print("Reason:")
+    	print(e)
     	sys.exit(0)
 
     filtered_notes = []

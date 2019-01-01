@@ -92,7 +92,7 @@ ${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 8} $
 ${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 9} ${top_mem mem_res 9}
 ${offset 350}${voffset}${color ffffff}${font monofur:size=10}${top_mem name 10} ${top_mem mem_res 10}
 
-${offset 1390}${voffset -29}${font monofur bold:pixelsize=18}Mustafa Özhan ${offset -113}${voffset 18}${color #dcdcdc}${font monofur:pixelsize=16}Arch Linux
+${offset 1390}${voffset -29}${font monofur bold:pixelsize=18}Mustafa Özhan ${offset -120}${voffset 18}${color #dcdcdc}${font monofur:pixelsize=16}Manjaro Linux
 
 ${alignc}${offset}${voffset 130}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 0}
 ${alignc}${offset}${voffset 2}${font monofur:pixelsize=14}${color ffffff}${rss http://news.ycombinator.com/rss 12 item_title 1}${color}${font}
