@@ -51,3 +51,8 @@ If you will have so much notes in your Google Keep or events in your Google Cale
 <a href="https://github.com/kunesj/conkyKeep">conkyKeep</a> for Google Keep integration, <a href="https://github.com/insanum/gcalcli">gcalcli</a> for Google calendar integration. And lastly apperance highly customized from  <a href="https://blog.icanbeacoder.com/inifinity-dark-conky-theme-v2/">inifinity-dark-conky-theme-v2</a>
 
 
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/mustafaozhan/GoogleIntegratedSystemConky/badge.svg?style=beer-square)](https://beerpay.io/mustafaozhan/GoogleIntegratedSystemConky)  [![Beerpay](https://beerpay.io/mustafaozhan/GoogleIntegratedSystemConky/make-wish.svg?style=flat-square)](https://beerpay.io/mustafaozhan/GoogleIntegratedSystemConky?focus=wish)
