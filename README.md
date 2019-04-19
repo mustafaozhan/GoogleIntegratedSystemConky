@@ -1,5 +1,6 @@
 # Google Integrated System Conky
 This is my Arch linux conky configuration with conky, lua, Google Calendar and Google Keep
+<a href='https://ko-fi.com/B0B2TZMH' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 <img src="https://i.postimg.cc/CMFRTkqb/gisc-1.png?dl=1" />
 
@@ -49,10 +50,3 @@ If you will have so much notes in your Google Keep or events in your Google Cale
 
 # Thanks to
 <a href="https://github.com/kunesj/conkyKeep">conkyKeep</a> for Google Keep integration, <a href="https://github.com/insanum/gcalcli">gcalcli</a> for Google calendar integration. And lastly apperance highly customized from  <a href="https://blog.icanbeacoder.com/inifinity-dark-conky-theme-v2/">inifinity-dark-conky-theme-v2</a>
-
-
-
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
-
-[![Beerpay](https://beerpay.io/mustafaozhan/GoogleIntegratedSystemConky/badge.svg?style=beer-square)](https://beerpay.io/mustafaozhan/GoogleIntegratedSystemConky)  [![Beerpay](https://beerpay.io/mustafaozhan/GoogleIntegratedSystemConky/make-wish.svg?style=flat-square)](https://beerpay.io/mustafaozhan/GoogleIntegratedSystemConky?focus=wish)
