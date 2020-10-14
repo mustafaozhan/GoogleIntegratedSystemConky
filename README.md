@@ -27,7 +27,7 @@ sudo apt-get install conky-all python3-pip python-pip ; sudo pip3 install beauti
 sudo pacman -S python-pip python2-pip ; yaourt -S conky-lua ; sudo pip3 install beautifulsoup4 requests lxml ; sudo pip2.7 install gcalcli ; git clone https://github.com/mustafaozhan/GoogleIntegratedSystemConky ; cd GoogleIntegratedSystemConky/ ; chmod +x install.sh && sh install.sh
 ```
 
-- Go to the ~/.config/GoogleIntegratedSystemConky/background/ and choose a walpaper and add your profile picture in the circle (You can use gimp as a editor and for good looking you can make it grayscale)
+- Go to the ~/.config/GoogleIntegratedSystemConky/background/ and choose a wallpaper and add your profile picture in the circle (You can use gimp as a editor and for good looking you can make it grayscale)
 
 - In ~/.config/GoogleIntegratedSystemConky/config.xml put your google mail address and password for notes
 
